@@ -64,7 +64,7 @@ public class Avaliacao {
 	}
 	
 	public double getMediaPon() {
-		return (this.nota1*1 + this.nota2*2)/1+2;
+		return (this.nota1*1 + this.nota2*2)/3;
 	}
 	
 }
