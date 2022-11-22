@@ -8,6 +8,7 @@ import Disciplinas.Curriculo;
 import Disciplinas.Disciplina;
 import Notas.Avaliacao;
 import Notas.Curso;
+import db.ManipuladorJsonAluno;
 
 
 public class UI {
@@ -15,12 +16,14 @@ public class UI {
 	private Turma turma = new Turma();
 	private Curriculo curriculo = new Curriculo();
 	private Curso curso = new Curso();
+	private ManipuladorJsonAluno manipulador = new ManipuladorJsonAluno();
 	
 	public UI() {
 		teclado = new Scanner(System.in);
 	}
 	
 	public void loopMenu() {
+		
 		menu();
 		boolean condicao = true;
 		
