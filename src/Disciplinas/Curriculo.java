@@ -11,6 +11,13 @@ public class Curriculo {
 		listaDeDisciplinas.add(disciplina);
 	}
 	
+	public void addDisciplinas(ArrayList<Disciplina> lista) {
+		if(lista == null)
+			return;
+		for (Disciplina disciplina : lista)
+			listaDeDisciplinas.add(disciplina);
+	}
+	
 	public Disciplina verificaSeDisciplinaExistePorCodigo(String cod) {
 		for(int i=0; i<listaDeDisciplinas.size();i++) {
 			if(listaDeDisciplinas.get(i).getCodigo().equalsIgnoreCase(cod)) {
@@ -18,6 +25,10 @@ public class Curriculo {
 			}
 		}
 		return null;
+	}
+	
+	public ArrayList<Disciplina> getLista() {
+		return listaDeDisciplinas;
 	}
 
 }

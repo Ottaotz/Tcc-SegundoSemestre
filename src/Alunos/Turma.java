@@ -5,13 +5,15 @@ import java.util.List;
 
 
 public class Turma {
-	private static List<Aluno> listaDeAlunos = new ArrayList<>();
+	private static ArrayList<Aluno> listaDeAlunos = new ArrayList<>();
 	
 	public void addAluno(Aluno aluno) {
 		listaDeAlunos.add(aluno);
 	}
 	
-	public void addAluno(List<Aluno> alunos) {
+	public void addAluno(ArrayList<Aluno> alunos) {
+		if(alunos == null)
+			return;
 		for(Aluno aluno : alunos)
 			listaDeAlunos.add(aluno);
 	}
@@ -25,7 +27,7 @@ public class Turma {
 		return null;
 	}
 	
-	public List<Aluno> getListaDeAlunos(){
+	public ArrayList<Aluno> getListaDeAlunos(){
 		return listaDeAlunos;
 	}
 	

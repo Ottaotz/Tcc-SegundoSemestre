@@ -13,6 +13,17 @@ public class Curso {
 		listaDeAvaliacoes.add(avaliacao);
 	}
 	
+	public void addAvaliacao(ArrayList<Avaliacao> lista) {
+		if (lista == null)
+			return;
+		for (Avaliacao avaliacao : lista)
+			listaDeAvaliacoes.add(avaliacao);
+	}
+	
+	public ArrayList<Avaliacao> getListaDeAvaliacoes() {
+		return listaDeAvaliacoes;
+	}
+
 	public void adicionaNota1(Aluno alu, Disciplina dis, double nota1) {
 		Avaliacao aval = procuraAvaliacao(alu, dis);
 		if(aval == null) {

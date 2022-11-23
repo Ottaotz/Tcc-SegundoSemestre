@@ -12,7 +12,7 @@ import Alunos.Turma;
 
 public class TestTurma {
 	private Turma turma;
-	private List<Aluno> alunos;
+	private ArrayList<Aluno> alunos;
 	
 	@Before
 	public void start() {
@@ -28,7 +28,7 @@ public class TestTurma {
 	@After
 	public void end() {
 		alunos.clear();
-		turma.clearListaDeAlunos(); //não entendi pois para cada teste é criada outra turma na ref
+		turma.clearListaDeAlunos(); 
 	}
 	
 	@Test

@@ -1,13 +1,17 @@
 package Notas;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import Alunos.Aluno;
 import Disciplinas.Disciplina;
 
 public class Avaliacao {
 	private Aluno aluno;
 	private Disciplina disciplina;
-	private double nota1;
-	private double nota2;
+	private double nota1 = -1;
+	private double nota2 = -1;
 	
 	public Avaliacao(Aluno aluno, Disciplina disciplina, double nota1, double nota2) {
 		this.aluno = aluno;
@@ -60,11 +64,19 @@ public class Avaliacao {
 	}
 	
 	public double getMediaAri() {
-		return (this.nota1 + this.nota2)/2;
+		NumberFormat formatter = new DecimalFormat();
+		Locale.setDefault(new Locale("en", "US"));
+		formatter.setMaximumFractionDigits(2);
+		return Double.parseDouble(formatter.format((this.nota1 + this.nota2)/2));
+//		return (this.nota1 + this.nota2)/2;
 	}
 	
 	public double getMediaPon() {
-		return (this.nota1*1 + this.nota2*2)/3;
+		NumberFormat formatter = new DecimalFormat();
+		Locale.setDefault(new Locale("en", "US"));
+		formatter.setMaximumFractionDigits(2);
+		return Double.parseDouble(formatter.format((this.nota1*1 + this.nota2*2)/3));
+//		return (this.nota1*1 + this.nota2*2)/3;
 	}
 	
 }

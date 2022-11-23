@@ -14,9 +14,9 @@ import com.google.gson.reflect.TypeToken;
 import Notas.Avaliacao;
 
 public class ManipuladorDeJsonAvaliacoes {
-private static String path = "C:\\Users\\ottos\\Documents\\github\\unisinos\\semestre2\\TrabalhoFinalNotas\\src\\db\\avaliacao.json";
+private static String path = "avaliacao.json";
 	
-	public static void escrtitor(ArrayList<Avaliacao> lista) throws IOException {
+	protected static void escritor(ArrayList<Avaliacao> lista) throws IOException {
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path));
 		Gson gson = new Gson();
 		String json = gson.toJson(lista);
@@ -24,13 +24,13 @@ private static String path = "C:\\Users\\ottos\\Documents\\github\\unisinos\\sem
 		buffWrite.close();
 	}
 	@SuppressWarnings("unchecked")
-	public static void leitor() throws FileNotFoundException {
+	protected static ArrayList<Avaliacao> leitor() throws FileNotFoundException {
 		FileReader json = new FileReader(path);
 		Gson gson = new Gson();		
 		Type tipoLista = new TypeToken<ArrayList<Avaliacao>>() {}.getType();
 		ArrayList<Avaliacao> listaDeAvaliacoes = gson.fromJson(json, tipoLista);
 		
-		System.out.println(listaDeAvaliacoes);
+		return listaDeAvaliacoes;
 		
 	}
 }
