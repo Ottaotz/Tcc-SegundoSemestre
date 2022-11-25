@@ -59,24 +59,24 @@ public class Avaliacao {
 	}
 	
 	public void setNota1eNota2(double nota1, double nota2) {
-		this.nota1 = nota1;
-		this.nota2 = nota2;
+		setNota1(nota1);
+		setNota2(nota2);
 	}
 	
 	public double getMediaAri() {
-		NumberFormat formatter = new DecimalFormat();
+		DecimalFormat df = new DecimalFormat("0.#");
 		Locale.setDefault(new Locale("en", "US"));
-		formatter.setMaximumFractionDigits(2);
-		return Double.parseDouble(formatter.format((this.nota1 + this.nota2)/2));
-//		return (this.nota1 + this.nota2)/2;
+		df.setGroupingUsed(true);
+		df.setGroupingSize(1);
+		return Double.parseDouble(DecimalFormat.getNumberInstance().format((this.nota1 + this.nota2)/2));
 	}
 	
 	public double getMediaPon() {
-		NumberFormat formatter = new DecimalFormat();
+		DecimalFormat df = new DecimalFormat("0.#");
 		Locale.setDefault(new Locale("en", "US"));
-		formatter.setMaximumFractionDigits(2);
-		return Double.parseDouble(formatter.format((this.nota1*1 + this.nota2*2)/3));
-//		return (this.nota1*1 + this.nota2*2)/3;
+		df.setGroupingUsed(true);
+		df.setGroupingSize(1);
+		return Double.parseDouble(df.format((this.nota1*1 + this.nota2*2)/3));
 	}
 	
 }
